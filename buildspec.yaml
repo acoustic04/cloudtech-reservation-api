@@ -31,7 +31,7 @@ phases:
       - echo "imageDetail.json created."
 artifacts:
   files:
-    - appspec.json
+    - appspec.yml
     - taskdef.json
     - imageDetail.json
   discard-paths: yes
