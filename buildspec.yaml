@@ -22,17 +22,10 @@ phases:
       - docker tag ${ECR_REPO_NAME}:latest ${ECR_IMAGE_URI}
       - docker push ${ECR_IMAGE_URI}
       - echo "Creating imageDetail.json..."
-      - |
-        echo '[
-          {
-            "name": "container-cloudtech-api",
-            "imageUri": ${ECR_IMAGE_URI}
-          }
-        ]' > imageDetail.json
+      - printf '{"ImageURI":"%s"}' ${ECR_IMAGE_URI} > imageDetail.json
       - echo "imageDetail.json created."
 artifacts:
   files:
     - appspec.yml
     - taskdef.json
     - imageDetail.json
-  discard-paths: yes
