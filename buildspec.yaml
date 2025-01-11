@@ -27,9 +27,11 @@ phases:
             "name": "container-cloudtech-api",
             "imageUri": "'$ECR_REPOSITORY':latest"
           }
-        ]' > imagedefinitions.json
-      - echo "imagedefinitions.json created."
+        ]' > imageDetail.json
+      - echo "imageDetail.json created."
 artifacts:
   files:
-    - imagedefinitions.json
+    - appspec.json
+    - taskdef.json
+    - imageDetail.json
   discard-paths: yes
