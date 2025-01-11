@@ -24,7 +24,7 @@ phases:
       - |
         echo '[
           {
-            "name": "cloudtech-sprint10-task",
+            "name": "container-cloudtech-api",
             "imageUri": "'$ECR_REPOSITORY':latest"
           }
         ]' > imagedefinitions.json
